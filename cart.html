@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>购物车</title>
+  <link rel="stylesheet" href="css/index.css">
+  <style>
+    .cart-page{max-width:1000px;margin:40px auto;}
+    .cart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+    .cart-list{background:#fff;border:1px solid #eee;padding:16px}
+    .cart-item{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #f4f4f4}
+    .cart-item img{width:80px;height:80px;object-fit:cover;border:1px solid #eee}
+    .cart-item .info{flex:1}
+    .cart-item .price{color:#ff5000;font-weight:bold}
+    .cart-summary{margin-top:16px;background:#fff;padding:16px;border:1px solid #eee;text-align:right}
+    .back-btn{border:none;background:#f5f5f5;padding:8px 12px;border-radius:6px;cursor:pointer}
+    .checkout-btn{background:linear-gradient(90deg,#ff9000,#ff5000);color:#fff;padding:10px 18px;border:none;border-radius:8px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <div class="cart-page container">
+    <div class="cart-header">
+      <h2><span class="iconfont mr5">&#xe63a;</span>购物车</h2>
+      <div>
+        <button class="back-btn" onclick="location.href='index.html'">返回首页</button>
+      </div>
+    </div>
+
+    <div class="cart-list" id="cartList">
+      <!-- items rendered here -->
+    </div>
+
+    <div class="cart-summary">
+      <label><input type="checkbox" id="selectAll"> 全选</label>
+      <div style="margin-top:12px">
+        合计：<span id="cartTotal" style="color:#ff5000;font-size:20px">¥0</span>
+      </div>
+      <div style="margin-top:12px">
+        <button class="checkout-btn" id="checkoutBtn">结算</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/cart.js"></script>
+</body>
+</html>

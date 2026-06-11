@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>视频播放</title>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .video-player{max-width:900px;margin:40px auto;text-align:center}
+        video{width:100%;height:auto;max-height:560px;background:#000}
+        .back-btn{display:inline-block;margin-top:12px;padding:8px 14px;background:#ff5000;color:#fff;border-radius:18px;text-decoration:none}
+    </style>
+</head>
+<body>
+    <div class="video-player">
+        <h2>视频播放</h2>
+        <video id="player" controls playsinline webkit-playsinline>
+            <source id="videoSource" src="" type="video/mp4">
+            您的浏览器不支持 video 标签，请更新浏览器。
+        </video>
+        <div>
+            <a href="index.html" class="back-btn">返回首页</a>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            function getQueryParam(name){
+                var params = new URLSearchParams(window.location.search);
+                return params.get(name);
+            }
+            var src = getQueryParam('src') || getQueryParam('v') || 'video/pv2.mp4';
+            var player = document.getElementById('player');
+            var source = document.getElementById('videoSource');
+            source.src = src;
+            // 为避免浏览器将 mp4 链接交给下载管理器，请使用内嵌播放器而非直接 a href 指向 .mp4
+            player.load();
+
+            // 播放结束后返回上一页（如果有历史）或首页
+            player.addEventListener('ended', function(){
+                if(window.history.length>1){
+                    window.history.back();
+                }else{
+                    window.location.href = 'index.html';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

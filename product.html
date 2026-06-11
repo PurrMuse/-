@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>商品占位页</title>
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="product-page">
+	<div class="product-container">
+		<div class="product-left">
+			<img id="mainImage" src="images/product-menghezi.jpg" alt="商品图"/>
+		</div>
+		<div class="product-right">
+			<button class="exit-btn" onclick="location.href='index.html'">返回首页</button>
+			<h2 class="product-title">vivo X300s 新品手机</h2>
+			<div class="price-wrap">
+				<span>价格：</span>
+				<span class="price" id="price">¥5139</span>
+			</div>
+
+			<div class="option-group">
+				<div class="option-label">机身颜色</div>
+				<div class="options" id="colorOptions">
+					<button class="option active" data-image="product-menghezi">梦核紫</button>
+					<button class="option" data-image="product-jiaopianlv">胶片绿</button>
+					<button class="option" data-image="product-tihei">钛黑</button>
+					<button class="option" data-image="product-yinbai">银白</button>
+				</div>
+			</div>
+
+			<div class="option-group">
+				<div class="option-label">存储容量</div>
+				<div class="options" id="storageOptions">
+					<button class="option" data-storage="12+256" data-price="4899">12GB+256GB</button>
+					<button class="option active" data-storage="12+512" data-price="5139">12GB+512GB</button>
+					<button class="option" data-storage="16+512" data-price="5499">16GB+512GB</button>
+					<button class="option" data-storage="16+1TB" data-price="6199">16GB+1TB</button>
+				</div>
+			</div>
+
+			<div class="option-group qty-group">
+				<div class="option-label">数量</div>
+				<div class="qty-controls">
+					<button id="qtyMinus" class="qty-btn">-</button>
+					<input id="qtyInput" type="text" value="1" />
+					<button id="qtyPlus" class="qty-btn">+</button>
+				</div>
+			</div>
+
+			<div class="action-row">
+				<button class="add-cart">加入购物车</button>
+				<button class="buy-now">立即购买</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/product.js"></script>
+</body>
+</html>
